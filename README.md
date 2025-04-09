@@ -1,19 +1,11 @@
 # STARTER-jpa03
 
-```
-TODO: Change link below from the example running app to your own running app
-For example, you might change it to:
-
-Running at: <https://jpa03-cgaucho.dokku-13.cs.ucsb.edu>
-
-Then remove this TODO item.
-```
-
-Running at: <https://starter-jpa03.dokku-00.cs.ucsb.edu>
+Running at: <https://jpa03-andrew200356.dokku-02.cs.ucsb.edu>
 
 # Configuring GitHub Pages for the documentation
 
 This repo contains Github Actions scripts that automatically create and publish documentation for the code:
+
 * javadoc for the backend Java code
 * Storybook for the frontend React code
 
@@ -21,11 +13,11 @@ To set this up, follow the instructions here: [`docs/github-pages.md`](docs/gith
 
 # Getting Started on localhost
 
-Before running the application for the first time on localhost, you must: 
+Before running the application for the first time on localhost, you must:
 
-* Set up Google OAuth as documented in [`docs/oauth.md`](docs/oauth.md) 
+* Set up Google OAuth as documented in [`docs/oauth.md`](docs/oauth.md)
 
-Otherwise, when you try to login for the first time, you 
+Otherwise, when you try to login for the first time, you
 will likely see an error such as:
 
 <img src="https://user-images.githubusercontent.com/1119017/149858436-c9baa238-a4f7-4c52-b995-0ed8bee97487.png" alt="Authorization Error; Error 401: invalid_client; The OAuth client was not found." width="400"/>
@@ -36,11 +28,12 @@ The app should be available on <http://localhost:8080>
   
 # Getting Started on Dokku
 
-Follow the steps here: [`docs/dokku.md`](docs/dokku.md) 
+Follow the steps here: [`docs/dokku.md`](docs/dokku.md)
 
 These references may also be helpful:
-  * <https://ucsb-cs156.github.io/topics/dokku/getting_started.html>
-  * <https://ucsb-cs156.github.io/topics/dokku/postgres_database.html>
+
+* <https://ucsb-cs156.github.io/topics/dokku/getting_started.html>
+* <https://ucsb-cs156.github.io/topics/dokku/postgres_database.html>
 
 # Accessing swagger
 
@@ -53,14 +46,13 @@ To access the Swagger API endpoints, use:
 
 You can also append `/swagger-ui/index.html` to the URL manually when running on Dokku.
 
-
 # To generate javadoc (locally, for development)
 
 * cd to top level of repo
 * use: `mvn javadoc:javadoc`
 * open in a web browser: `target/site/apidocs/index.html`
 
-You can also see the javadoc for the main branch and all open pull requests on the 
+You can also see the javadoc for the main branch and all open pull requests on the
 github pages site associated with the repo; see [/docs/github-pages.md](/docs/github-pages.md) for more info.
 
 * For documentation on Javadoc, see: <https://www.oracle.com/java/technologies/javase/javadoc-tool.html>
@@ -68,12 +60,14 @@ github pages site associated with the repo; see [/docs/github-pages.md](/docs/gi
 # SQL Database access
 
 On localhost:
+
 * The SQL database is an H2 database and the data is stored in a file under `target`
 * Each time you do `mvn clean` the database is completely rebuilt from scratch
 * You can access the database console via a special route, <http://localhost:8080/h2-console>
 * For more info, see [docs/h2-database.md](/docs/h2-database.md)
 
 On Dokku:
+
 * The SQL database is a postgres database provisioned automatically by Dokku
 * More info and instructions for accessing the SQL prompt are at [docs/postgres-database.md](/docs/postgres-database.md)
 
@@ -88,6 +82,7 @@ Tests ending under `test` in the `web` directory that end in `IT.java` instead o
 ## Integration Tests
 
 To run only the integration tests, use:
+
 ```
 INTEGRATION=true mvn test-compile failsafe:integration-test
 ```
@@ -106,6 +101,7 @@ INTEGRATION=true mvn test-compile failsafe:integration-test -Dit.test=HomePageWe
 ```
 
 or to see it run live:
+
 ```
 INTEGRATION=true HEADLESS=false mvn test-compile failsafe:integration-test -Dit.test=HomePageWebIT
 ```
